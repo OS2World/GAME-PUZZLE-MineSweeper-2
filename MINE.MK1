@@ -1,0 +1,27 @@
+!define BLANK ""
+e:\wcos2\src\mine\mine.obj : e:\wcos2\src\mine\mine.c .AUTODEPEND
+ @e:
+ cd e:\wcos2\src\mine
+ *wcc386 mine.c -i=c:\watcom\h;c:\watcom\h\os2 -w4 -e25 -zq -os -5r -bt=os2 &
+-mf
+
+e:\wcos2\src\mine\mine.res : e:\wcos2\src\mine\mine.rc .AUTODEPEND
+ @e:
+ cd e:\wcos2\src\mine
+ rc -i $[: -i c:\watcom\h -i c:\watcom\h\os2 -r mine.rc mine.res
+
+e:\wcos2\src\mine\mine.exe : e:\wcos2\src\mine\mine.obj e:\wcos2\src\mine\mi&
+ne.res .AUTODEPEND
+ @e:
+ cd e:\wcos2\src\mine
+ @%write mine.lk1 FIL mine.obj
+ @%append mine.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b mine.imp 
+ @%append mine.lk1 LIBR mine.imp
+!endif
+ *wlink name mine d all SYS os2v2 pm op m op maxe=25 op q op symf @mine.lk1
+!ifneq BLANK "mine.res"
+ rc -i $[: -i c:\watcom\h -i c:\watcom\h\os2 mine.res mine.exe
+!endif
+

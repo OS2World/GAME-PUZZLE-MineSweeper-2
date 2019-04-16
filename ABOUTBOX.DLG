@@ -1,0 +1,16 @@
+
+DLGTEMPLATE 200 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "About Mine/2", 200, 55, 8, 148, 84, WS_VISIBLE, FCF_SYSMENU | 
+            FCF_TITLEBAR
+    BEGIN
+        ICON            50, 50, 4, 62, 21, 16, WS_GROUP
+        LTEXT           "Mine sweeper for OS/2", 202, 38, 66, 102, 8, 
+                        DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Tms Rmn Italic"
+        CTEXT           "Written by Dima Zaharov, 1999", 203, 4, 45, 140, 8
+        DEFPUSHBUTTON   "Ok", 206, 2, 2, 40, 14
+        CTEXT           "MadInt@hotmail.com", 204, 3, 34, 141, 8, DT_VCENTER | 
+                        DT_HALFTONE
+    END
+END

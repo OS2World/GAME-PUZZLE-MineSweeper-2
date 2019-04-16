@@ -1,0 +1,59 @@
+
+#include <os2.h>
+#include "mine.h"
+
+MENU  ID_WINDOW PRELOAD
+BEGIN
+SUBMENU "Game", M_GAME
+  BEGIN
+    SUBMENU  "~New game", M_NEWGAME, MIS_TEXT
+    BEGIN
+    MENUITEM "No~vice", M_NEWEASY,MIS_TEXT
+    MENUITEM "No~rmal", M_NEWMEDI,MIS_TEXT
+    MENUITEM "~Profy", M_NEWHARD,MIS_TEXT
+    END
+    MENUITEM "T~imer", M_TIMER,MIS_TEXT,MIA_CHECKED
+    MENUITEM SEPARATOR
+    MENUITEM "E~xit\tF3", M_EXIT,MIS_TEXT
+END
+SUBMENU "Help", M_HELP
+  BEGIN
+    MENUITEM "~About Mine/2 ...", M_ABOUT, MIS_TEXT
+  END
+END
+
+ICON 50         mine.ico
+ICON ID_WINDOW  bomb.ico
+
+BITMAP  BM_0	  0.bmp
+BITMAP  BM_1	  1.bmp
+BITMAP  BM_2	  2.bmp
+BITMAP  BM_3	  3.bmp
+BITMAP  BM_4	  4.bmp
+BITMAP  BM_5	  5.bmp
+BITMAP  BM_6	  6.bmp
+BITMAP  BM_7	  7.bmp
+BITMAP  BM_8	  8.bmp
+BITMAP  BM_9	  8.bmp
+BITMAP  BM_BOMB   bomb.bmp
+BITMAP  BM_CHECK  check.bmp
+BITMAP  BM_ILL	  ill.bmp
+BITMAP  BM_FAIL   fail.bmp
+BITMAP  BM_ASK1   ask1.bmp
+BITMAP  BM_ASK2   ask2.bmp
+BITMAP  BM_FACED  face1.bmp
+BITMAP  BM_FACE1  face2.bmp
+BITMAP  BM_FACE2  face3.bmp
+BITMAP  BM_FACE3  face4.bmp
+BITMAP  BM_FACE4  face5.bmp
+BITMAP  BM_EMPTY  empty.bmp
+BITMAP  BM_B1     b1.bmp
+BITMAP  BM_B2     b2.bmp
+BITMAP  BM_B3     b3.bmp
+BITMAP  BM_B4     b4.bmp
+BITMAP  BM_B5     b5.bmp
+BITMAP  BM_B6     b6.bmp
+BITMAP  BM_B7     b7.bmp
+BITMAP  BM_B8     b8.bmp
+
+RCINCLUDE aboutbox.dlg
