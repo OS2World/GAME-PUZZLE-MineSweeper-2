@@ -3,6 +3,8 @@
 Mine Sweeper/2 is a Minesweeper clone for the OS/2 Presentation Manager.
 Originally written by Dmitry Zaharov in 1999.
 
+![MineSweeper](/doc/MineSweeper2.png)
+
 ## Version
 
 1.5
