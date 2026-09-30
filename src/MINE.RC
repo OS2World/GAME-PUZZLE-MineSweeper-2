@@ -1,0 +1,107 @@
+
+#include <os2.h>
+#include "mine.h"
+
+ICON     ID_WINDOW  images\bomb.ico
+
+BITMAP  BM_0    images\0.bmp
+BITMAP  BM_1    images\1.bmp
+BITMAP  BM_2    images\2.bmp
+BITMAP  BM_3    images\3.bmp
+BITMAP  BM_4    images\4.bmp
+BITMAP  BM_5    images\5.bmp
+BITMAP  BM_6    images\6.bmp
+BITMAP  BM_7    images\7.bmp
+BITMAP  BM_8    images\8.bmp
+BITMAP  BM_9    images\8.bmp
+BITMAP  BM_BOMB   images\bomb.bmp
+BITMAP  BM_CHECK  images\check.bmp
+BITMAP  BM_ILL    images\ill.bmp
+BITMAP  BM_FAIL   images\fail.bmp
+BITMAP  BM_FACED  images\face1.bmp
+BITMAP  BM_FACE1  images\face2.bmp
+BITMAP  BM_FACE2  images\face3.bmp
+BITMAP  BM_FACE3  images\face4.bmp
+BITMAP  BM_FACE4  images\face5.bmp
+BITMAP  BM_ASK1   images\ask1.bmp
+BITMAP  BM_ASK2   images\ask2.bmp
+BITMAP  BM_EMPTY  images\empty.bmp
+BITMAP  BM_B1     images\b1.bmp
+BITMAP  BM_B2     images\b2.bmp
+BITMAP  BM_B3     images\b3.bmp
+BITMAP  BM_B4     images\b4.bmp
+BITMAP  BM_B5     images\b5.bmp
+BITMAP  BM_B6     images\b6.bmp
+BITMAP  BM_B7     images\b7.bmp
+BITMAP  BM_B8     images\b8.bmp
+
+MENU ID_WINDOW PRELOAD
+BEGIN
+    SUBMENU "~Game", IDM_SUBMENU_GAME
+    BEGIN
+        MENUITEM "~New Game\tCtrl+N",   IDM_NEWGAME, MIS_TEXT
+        MENUITEM "~Pause Game\tCtrl+P", IDM_PAUSE,   MIS_TEXT
+        MENUITEM "~Quit Game\tCtrl+Q",  IDM_QUIT,    MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "E~xit\tCtrl+X",       IDM_EXIT,    MIS_TEXT
+    END
+    SUBMENU "~Options", IDM_SUBMENU_OPTIONS
+    BEGIN
+        SUBMENU "~Level", IDM_SUBMENU_LEVEL
+        BEGIN
+            MENUITEM "N~ovice",  IDM_NOVICE, MIS_TEXT
+            MENUITEM "N~ormal",  IDM_NORMAL, MIS_TEXT, MIA_CHECKED
+            MENUITEM "~Profy",   IDM_PROFY,  MIS_TEXT
+        END
+        MENUITEM "~Timer",                   IDM_TIMER,      MIS_TEXT, MIA_CHECKED
+        MENUITEM SEPARATOR
+        SUBMENU "~Language", IDM_SUBMENU_LANG
+        BEGIN
+            MENUITEM "English",    IDM_LANG_EN, MIS_TEXT, MIA_CHECKED
+            MENUITEM "Espanol",    IDM_LANG_ES, MIS_TEXT
+            MENUITEM "Nederlands", IDM_LANG_NL, MIS_TEXT
+            MENUITEM "Deutsch",    IDM_LANG_DE, MIS_TEXT
+            MENUITEM "Francais",   IDM_LANG_FR, MIS_TEXT
+            MENUITEM "Italiano",   IDM_LANG_IT, MIS_TEXT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "~Background Run\tCtrl+B",  IDM_BACKGRND,   MIS_TEXT
+        MENUITEM "~Frame Controls\tCtrl+F",  IDM_FRAME,      MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "~Save settings on exit",   IDM_SAVEONEXIT, MIS_TEXT, MIA_CHECKED
+    END
+    SUBMENU "~Help", IDM_SUBMENU_HELP
+    BEGIN
+        MENUITEM "~About...",  IDM_ABOUT, MIS_TEXT
+    END
+END
+
+ACCELTABLE ID_WINDOW
+BEGIN
+    "n", IDM_NEWGAME,  CONTROL
+    "N", IDM_NEWGAME,  CONTROL
+    "p", IDM_PAUSE,    CONTROL
+    "P", IDM_PAUSE,    CONTROL
+    "q", IDM_QUIT,     CONTROL
+    "Q", IDM_QUIT,     CONTROL
+    "x", IDM_EXIT,     CONTROL
+    "X", IDM_EXIT,     CONTROL
+    "b", IDM_BACKGRND, CONTROL
+    "B", IDM_BACKGRND, CONTROL
+    "f", IDM_FRAME,    CONTROL
+    "F", IDM_FRAME,    CONTROL
+END
+
+DLGTEMPLATE IDD_ABOUT
+{
+    DIALOG "About Mine Sweeper/2", 0, 32, 24, 240, 110, , FCF_TITLEBAR|FCF_DLGBORDER
+    {
+        CTEXT "Mine Sweeper/2 for OS/2",      -1, 10, 90, 220, 8
+        CTEXT "Version 1.5",                  -1, 10, 78, 220, 8
+        CTEXT "OpenWatcom Release",           -1, 10, 66, 220, 8
+        CTEXT "(c) 1999, Dmitry Zaharov",     -1, 10, 54, 220, 8
+        CTEXT "(c) 2026, OS2World",           -1, 10, 42, 220, 8
+        CTEXT "BSD 3-Clause License",         -1, 10, 30, 220, 8
+        DEFPUSHBUTTON "Close", DID_OK,        98, 10, 44, 14, WS_GROUP
+    }
+}

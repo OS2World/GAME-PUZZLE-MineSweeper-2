@@ -1,0 +1,45 @@
+Mine Sweeper/2 - Changelog
+==========================
+
+1.5 (2026-09-30)
+- Ported build system from IBM VisualAge C++ to OpenWatcom 2.0
+- New project layout: src/, bin/, doc/, legacy/
+- Images moved to src/images/; converted from 1-bit to 4-bit BMP for
+  correct rendering on ArcaOS
+- All graphics and game window scaled 2x for better readability on
+  modern displays (cells 32x32, border tiles 16x16)
+- New menu structure: Game / Options / Help
+- Game menu: New Game (Ctrl+N), Pause Game (Ctrl+P), Quit Game (Ctrl+Q),
+  Exit (Ctrl+X)
+- Options menu: Level submenu, Timer toggle, Language, Background Run,
+  Frame Controls, Save settings on exit
+- Added 6-language UI: English, Spanish, Dutch, German, French, Italian;
+  switchable at runtime from Options > Language
+- Keyboard shortcuts wired via WinLoadAccelTable + WinSetAccelTable
+  (Ctrl+N, P, Q, X, B, F all working)
+- Pause Game (Ctrl+P): stops/resumes timer
+- Quit Game (Ctrl+Q): stops current game without exiting
+- Background Run (Ctrl+B): timer continues when app loses focus
+- Timer pauses automatically on app deactivation when Background Run is
+  off (WM_ACTIVATE via frame subclass, WinSubclassWindow)
+- Frame Controls (Ctrl+F): hides/shows title bar and menu; window
+  auto-resizes to eliminate the white space left by hidden decorations
+- Status bar display corrected: black area covers full client width
+  and height, eliminating stray gray border tiles at corners
+- Settings persisted to MINE.cfg (binary)
+- BLDLEVEL string added to executable
+- Replaced IBM VisualAge-specific #pragma linkage with standard declaration
+- Code page changed from CP866 (Russian) to CP850 (Western European)
+- About dialog: standard OS2World format (Close button, no email)
+- Window class renamed to MineSweeper2
+
+1.0 (1999)
+- Original release by Dmitry Zaharov
+- IBM VisualAge C++ build
+- Minesweeper clone for OS/2 Presentation Manager
+- Three difficulty levels: Novice (8x8, 10 mines), Normal (16x16, 40 mines),
+  Profy (32x20, 100 mines)
+- Countdown timer (10-minute limit)
+- Mine counter
+- Border tile graphics
+- Double-click to restart after game over
