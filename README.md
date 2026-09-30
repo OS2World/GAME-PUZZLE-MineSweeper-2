@@ -48,4 +48,5 @@ Output: `bin\mine.exe`
 
 ## Links
 
+- https://github.com/OS2World/GAME-PUZZLE-MineSweeper-2
 - OS2World: https://www.os2world.com

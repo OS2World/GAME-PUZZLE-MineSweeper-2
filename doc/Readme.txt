@@ -77,3 +77,7 @@ CREDITS
   Original author:  Dmitry Zaharov (1999)
   OS/2 port:        OS2World community (2026)
   OS2World site:    https://www.os2world.com
+
+LINKS
+-----
+- https://github.com/OS2World/GAME-PUZZLE-MineSweeper-2
